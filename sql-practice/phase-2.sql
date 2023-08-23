@@ -11,10 +11,9 @@ Create Table customers (
 );
 
 CREATE Table coffee_orders (
-  id integer primary key autoincrement,
+    id integer primary key autoincrement,
     is_redeemed boolean default "FALSE",
-    ordered_at timestamp default current_time NOT NULL
---   user id NOT NULL,
---   foreign key (user_id) references users(id)
-
+    ordered_at timestamp default current_time NOT NULL,
+    user_id NOT NULL,
+    foreign key (user_id) references customers(id)
 );
